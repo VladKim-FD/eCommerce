@@ -1,0 +1,31 @@
+@import './common';
+
+@mixin font($fz: null, $lh: null, $c: null, $fw: null, $ff: null) {
+    font-size: $fz;
+    line-height: $lh;
+    color: $c;
+    font-weight: $fw;
+    font-family: $ff;
+}
+
+@mixin media($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    @include media(1400px){max-width: 1140px;}
+    @include media(1200px){max-width: 960px;}
+    @include media(992px){max-width: 720px;}
+    @include media(768){max-width: 540px;}
+    @include media(576px){max-width: 100%;}
+}
+
+.container{
+    @include container();
+}

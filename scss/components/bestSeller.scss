@@ -1,0 +1,32 @@
+@import '../common/root';
+@import '../common/common';
+
+.best__seller-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    .item {
+        width: 30%;
+        position: relative;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            max-height: 200px;
+
+        }
+
+        .add {
+            position: absolute;
+            bottom: -30%;
+            left: 36%;
+            background: white;
+        }
+    }
+
+    .item:hover .add {
+        bottom: 110px;
+        transition: bottom 0.3s;
+    }
+}

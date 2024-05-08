@@ -1,0 +1,33 @@
+@import '../common/root';
+@import '../common/common';
+
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    // background-color: grey;
+    height: 100%;
+    position: relative;
+}
+
+.swiper-slide a:hover{
+    cursor: pointer;
+}
+
+.swiper-slide img {
+    width: 100%;
+    // height: 300px;
+    object-fit: contain;
+}
+
+.swiper-slide div {
+    position: absolute;
+    left: 25%;
+    bottom: 10px;
+    padding: 15px 40px;
+    background-color: white;
+    border-radius: 15px;
+}
