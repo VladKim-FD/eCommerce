@@ -1,15 +1,19 @@
 import { defineStore } from 'pinia'
 import axios from "axios";
+import { useRouter } from 'nuxt/app';
 
 export const useStore = defineStore('store', {
     state: () => ({
+        products: [],
         categories: [],
         categoriesData: [],
-        bestSeller: []
+        bestSeller: [],
+        categoryData: []
     }),
     actions: {
         async getCategories() {
             const response = await axios.get('https://dummyjson.com/products/?&limit=100');
+            this.products = response.data.products; 
             let length = response.data.products.length;
             let categories = []
 
@@ -59,7 +63,12 @@ export const useStore = defineStore('store', {
             }
 
             this.bestSeller = topRatedProducts
-            console.log(this.bestSeller);
+            // console.log(this.bestSeller);
+        },
+        redirectToCategory(category){
+            this.categoryData = this.products.filter((item) => item.category === category );
+            const router = useRouter();
+            router.push('/category')
         }
     }
 })

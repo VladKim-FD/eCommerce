@@ -6,12 +6,12 @@
                 clickable: true,
             }" :modules="modules" class="mySwiper">
                 <swiper-slide v-for="category in store.categoriesData">
-                    <a href="">
+                    <div  @click="store.redirectToCategory(category.category)">
                         <img :src="category.firstImage" alt="">
                         <div class="">
                             <p>{{ category.category }}</p>
                         </div>
-                    </a>
+                    </div>
                 </swiper-slide>
             </swiper>
         </div>
