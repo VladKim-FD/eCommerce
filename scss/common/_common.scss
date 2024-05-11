@@ -7,3 +7,14 @@
     font-family: 'tt norms';
 }
 
+:root{
+    --grey: #F5F5F5;
+    --grey-text: #ccc;   
+    --black-text: #111;
+    --white: #fff;
+}
+
+$grey: var(--grey);
+$greyText: var(--grey-text);
+$blackText: var(--black-text);
+$white: var(--white);
